@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  height: 100px;
+  width: 170px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid greenyellow;
+  flex-direction: column;
+}
+
+body {
+  background-color: #212121;
+  color: #fff;
+}
+
+#clock {
+  font-size: 25px;
+  background-color: orange;
+  height: 30px;
+  width: 60px;
+  padding: 20px 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
