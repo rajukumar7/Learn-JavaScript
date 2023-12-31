@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Learn JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <h2 id="h2"></h2>
+  </body>
+  <script>
+    // setInterval(function () {
+    //   console.log("RajuKumar", Date.now());
+    // }, 2000);
+
+    // const printDate = function () {
+    //   console.log("RajuKumar", Date.now());
+    // };
+
+    // setInterval(printDate, 1000);
+
+    const printDate = function (str) {
+      document.getElementsById("h2").innerHTML = (str, Date.now());
+    };
+
+    const intecalId = setInterval(printDate, 1000, "hi");
+
+    document.querySelector("#start").addEventListener("click", function (e) {
+      e.preventDefault();
+      setInterval(printDate, 1000, "hi");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function (e) {
+      clearInterval(intecalId);
+    });
+
+  </script>
+</html>
