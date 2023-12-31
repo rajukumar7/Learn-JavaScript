@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing Images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="girl"
+            src="https://images.pexels.com/photos/206557/pexels-photo-206557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="girl"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="eye"
+            src="https://images.pexels.com/photos/281279/pexels-photo-281279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="eye"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="nature"
+            src="https://images.pexels.com/photos/2888333/pexels-photo-2888333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="nature"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="flower"
+            src="https://images.pexels.com/photos/56890/fir-tannenzweig-pine-cones-needles-56890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="flower"
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("eye").onclick = function () {
+    //   alert("hello! eye");
+    // };
+    // attachEvent()
+    // jQuery- on
+
+    // have to study
+    // type, timeStamp, defaultPrevent,target, toElement,currentTarget,clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // best approach to use onclick
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     // alert("hello! eye clicked");
+    //     // console.log(e);
+    //     console.log("clicked insite the ul");
+    //   },
+    //   false // this is called event propagation babblingum, its default value is false
+    // );
+
+    // document.getElementById("eye").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("eye clicked");
+    //     e.stopPropagation(); // stop propagation of bubbling
+    //   },
+    //   //true // this one is called capturing mode
+    //   false
+    // );
+
+    // document.getElementById("google").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    //   },
+    //   false
+    // );
+
+    // <---------------------------------------------------------------->
+
+    document.querySelector("#images").addEventListener(
+      "click",
+      function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+        }
+        // console.log(e.target.parentNode);
+
+        // removeIt.parentNode.removeChild(removeIt);
+      },
+      false
+    );
+  </script>
+</html>
